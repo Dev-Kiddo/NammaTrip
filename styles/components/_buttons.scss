@@ -1,0 +1,78 @@
+
+// -----------------------------
+// Button
+// -----------------------------
+
+.btn {
+  &:link,
+  &:visited {
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+    text-decoration: none;
+    /* height: 60px; */
+    padding: 1.5rem 4rem;
+    border-radius: 5rem;
+    transition: all 0.2s;
+  }
+
+  &--white {
+    background-color: $color-white;
+    color: $color-grey-dary;
+
+    &::after {
+      background-color: $color-white;
+    }
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    &::after {
+      transform: scale(1.4);
+      opacity: 0;
+    }
+  }
+
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5 10px rgba(0, 0, 0, 0.2);
+  }
+
+  &::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 5rem;
+    position: absolute;
+    top: 0%;
+    left: 0;
+    z-index: -1;
+    transition: all 0.2s;
+  }
+
+  &--animated {
+    animation: moveBtnBottom 3s ease-out;
+  }
+}
+
+.btn-text {
+  &:link,
+  &visited {
+    font-size: $default-font-size;
+    color: $color-primary;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 1px solid $color-primary;
+    padding: 0.5rem 1.5rem;
+    transition: 0.5s all;
+  }
+
+  &:hover {
+    background-color: $color-primary;
+    color: $color-white;
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.15);
+    transform: translateY(3px);
+  }
+}
